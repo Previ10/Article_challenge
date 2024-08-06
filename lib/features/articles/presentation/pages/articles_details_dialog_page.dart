@@ -76,19 +76,17 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
             const SizedBox(height: 10),
             Row(
               children: [
-                const Text(
-                  'Font url:',
-                  style: TextStyle(),
-                ),
-                Link(
-                  uri: Uri.parse(widget.article.url),
-                  builder: (context, followLink) => TextButton(
-                    onPressed: followLink,
-                    child: Text(
-                      widget.article.url,
-                      style: const TextStyle(
-                        color: Colors.blue,
-                        decoration: TextDecoration.underline,
+                Expanded(
+                  child: Link(
+                    uri: Uri.parse(widget.article.url),
+                    builder: (context, followLink) => TextButton(
+                      onPressed: followLink,
+                      child: Text(
+                        widget.article.url,
+                        style: const TextStyle(
+                          color: Colors.blue,
+                          decoration: TextDecoration.underline,
+                        ),
                       ),
                     ),
                   ),
