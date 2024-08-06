@@ -5,11 +5,18 @@ final theme = ThemeData(
   useMaterial3: true,
 );
 
+final darnkTheme = ThemeData(
+  primaryColor: Palette.primary,
+  useMaterial3: true,
+);
+
 class Palette {
   static Color backgroundColorScaffold = const Color.fromRGBO(242, 244, 247, 1);
   static Color primary = const Color(0xff0B142F);
   static Color softGrey = Colors.grey.shade300;
   static Color mediumGrey = Colors.grey.shade700;
+  static Color darkGrey = Colors.grey.shade800;
+  static Color pinkButton = const Color.fromARGB(255, 187, 64, 198);
 
   static Color secondary = const Color(0xffEC663A);
   static Color primaryFocused = const Color(0xff042859);

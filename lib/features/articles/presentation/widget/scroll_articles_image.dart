@@ -59,7 +59,8 @@ class _ScrollArticlesImageState extends State<ScrollArticlesImage> {
               Container(
                 width: screenSize.width * 1,
                 height: screenSize.height * 0.6,
-                margin: const EdgeInsets.symmetric(horizontal: 40.0),
+                margin:
+                    const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(15),
                   child: selectCorrectImg(widget.articles[index].urlToImage),

@@ -112,62 +112,76 @@ class _ArticlesPageState extends State<ArticlesPage> {
     return BlocProvider(
       create: (context) => _articlesBloc,
       child: Scaffold(
-        appBar: CustomAppbar(onCountrySelected: _onCountrySelected),
-        body: BlocListener<ArticlesBloc, ArticlesState>(
-          listener: (context, state) async {
-            if (state is OnLoading) {
-              setState(() {
-                isLoading = true;
-              });
-            } else if (state is OnFetchArticlesLoaded) {
-              setState(() {
-                articles = state.articles;
-                isLoading = false;
-              });
-              final articleResponseModel = ArticleResponseModel(
-                  articles: state.articles, status: '', totalResults: 0);
-              await _saveArticlesInLocal(articleResponseModel);
-            } else if (state is OnFetchArticlesFailure) {
-              setState(() {
-                isLoading = false;
-              });
-              await _loadLocalArticles();
-              showErrorSnackBar();
-            }
-          },
-          child: Column(
-            children: [
-              Expanded(
-                flex: 1,
-                child: FadeIn(child: ScrollArticlesImage(articles: articles)),
-              ),
-              SizedBox(
-                height: screenSize.width * 0.08,
-              ),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Recent News',
-                  style: GoogleFonts.poppins(
-                      color: Palette.primary,
-                      fontSize: screenSize.width * 0.03,
-                      fontWeight: FontWeight.bold),
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 113, 210, 255),
+                Color.fromARGB(255, 188, 76, 113)
+              ],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+            ),
+          ),
+          child: BlocListener<ArticlesBloc, ArticlesState>(
+            listener: (context, state) async {
+              if (state is OnLoading) {
+                setState(() {
+                  isLoading = true;
+                });
+              } else if (state is OnFetchArticlesLoaded) {
+                setState(() {
+                  articles = state.articles;
+                  isLoading = false;
+                });
+                final articleResponseModel = ArticleResponseModel(
+                    articles: state.articles, status: '', totalResults: 0);
+                await _saveArticlesInLocal(articleResponseModel);
+              } else if (state is OnFetchArticlesFailure) {
+                setState(() {
+                  isLoading = false;
+                });
+                await _loadLocalArticles();
+                showErrorSnackBar();
+              }
+            },
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: FadeIn(child: ScrollArticlesImage(articles: articles)),
                 ),
-              ),
-              SizedBox(
-                height: screenSize.width * 0.02,
-              ),
-              Expanded(
-                child: FadeIn(
-                  child: ArticlesListTitleWidget(
-                    articles: articles,
-                    isLoading: isLoading,
+                SizedBox(
+                  height: screenSize.width * 0.08,
+                ),
+                isLoading
+                    ? const SizedBox()
+                    : Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          '    Recent News',
+                          style: GoogleFonts.poppins(
+                              color: Palette.primary,
+                              fontSize: screenSize.width * 0.03,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                SizedBox(
+                  height: screenSize.width * 0.02,
+                ),
+                Expanded(
+                  child: FadeIn(
+                    child: ArticlesListTitleWidget(
+                      articles: articles,
+                      isLoading: isLoading,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
+        appBar: CustomAppbar(onCountrySelected: _onCountrySelected),
       ),
     );
   }

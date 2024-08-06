@@ -1,5 +1,6 @@
 import 'package:articles_app_challenge/core/theme/theme.dart';
 import 'package:articles_app_challenge/features/articles/domain/entity/article_entity.dart';
+import 'package:articles_app_challenge/features/articles/presentation/pages/articles_details_dialog_page.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,14 +58,14 @@ class _ArticlesListTitleWidgetState extends State<ArticlesListTitleWidget> {
                   borderRadius: BorderRadius.circular(15.0),
                   border: Border.all(
                       width: screenSize.width * 0.001,
-                      color: Palette.softGrey)),
+                      color: Palette.darkGrey)),
               child: Row(
                 children: [
                   if (article.urlToImage.isNotEmpty)
                     Padding(
                       padding: const EdgeInsets.all(10),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
+                        borderRadius: BorderRadius.circular(10),
                         child: CachedNetworkImage(
                           imageUrl: article.urlToImage,
                           height: screenSize.height * 0.10,
@@ -95,12 +96,11 @@ class _ArticlesListTitleWidgetState extends State<ArticlesListTitleWidget> {
                             style: GoogleFonts.poppins(
                               color: Palette.backgroundColorScaffold,
                               fontSize: screenSize.width * 0.023,
-                              fontWeight: FontWeight.w600,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
                           const SizedBox(height: 8.0),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
                                 child: Text(
@@ -114,6 +114,30 @@ class _ArticlesListTitleWidgetState extends State<ArticlesListTitleWidget> {
                                   ),
                                 ),
                               ),
+                              TextButton(
+                                  onPressed: () {
+                                    showDialog(
+                                      barrierDismissible: false,
+                                      context: context,
+                                      builder: (context) => ArticleDetailPage(
+                                        article: widget.articles[index],
+                                      ),
+                                    );
+                                  },
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.view_agenda,
+                                        color: Palette.pinkButton,
+                                      ),
+                                      const SizedBox(width: 5.0),
+                                      Text(
+                                        "more details",
+                                        style: TextStyle(
+                                            color: Palette.pinkButton),
+                                      ),
+                                    ],
+                                  )),
                               Text(
                                 formattedDate,
                                 maxLines: 1,
