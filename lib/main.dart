@@ -16,7 +16,9 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      darkTheme: darkTheme,
       theme: theme,
+      themeMode: ThemeMode.system,
       key: navigatorKey,
       routerConfig: appRouter,
       title: 'ARTICLES-APP',

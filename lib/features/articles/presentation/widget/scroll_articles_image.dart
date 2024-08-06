@@ -117,7 +117,7 @@ class _ScrollArticlesImageState extends State<ScrollArticlesImage> {
                                     maxLines: 2,
                                     overflow: TextOverflow.ellipsis,
                                     style: GoogleFonts.poppins(
-                                        color: Palette.ligthblue,
+                                        color: Palette.lightBlue,
                                         fontSize: screenSize.width * 0.020,
                                         fontWeight: FontWeight.w400),
                                   ),

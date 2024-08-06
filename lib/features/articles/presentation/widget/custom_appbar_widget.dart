@@ -46,7 +46,7 @@ class CustomAppbarState extends State<CustomAppbar> {
     Size screenSize = MediaQuery.of(context).size;
     return AppBar(
       leading: IconButton(
-        icon: const Icon(Icons.apps),
+        icon: const Icon(Icons.dark_mode_outlined),
         onPressed: () {},
       ),
       title: Center(
