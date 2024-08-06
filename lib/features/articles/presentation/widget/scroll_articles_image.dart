@@ -99,24 +99,28 @@ class _ScrollArticlesImageState extends State<ScrollArticlesImage> {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Text(
-                                  widget.articles[index].author,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.poppins(
-                                      color: Palette.secondary,
-                                      fontSize: screenSize.width * 0.020,
-                                      fontWeight: FontWeight.w400),
+                                SizedBox(width: screenSize.width * 0.1),
+                                Expanded(
+                                  child: Text(
+                                    widget.articles[index].author,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.poppins(
+                                        color: Palette.secondary,
+                                        fontSize: screenSize.width * 0.020,
+                                        fontWeight: FontWeight.w400),
+                                  ),
                                 ),
-                                SizedBox(width: screenSize.width * 0.3),
-                                Text(
-                                  formattedDate,
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: GoogleFonts.poppins(
-                                      color: Palette.ligthblue,
-                                      fontSize: screenSize.width * 0.020,
-                                      fontWeight: FontWeight.w400),
+                                Expanded(
+                                  child: Text(
+                                    formattedDate,
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.poppins(
+                                        color: Palette.ligthblue,
+                                        fontSize: screenSize.width * 0.020,
+                                        fontWeight: FontWeight.w400),
+                                  ),
                                 ),
                               ],
                             ),
