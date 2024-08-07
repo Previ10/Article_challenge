@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-final ValueNotifier<ThemeMode> themeNotifier =
-    ValueNotifier<ThemeMode>(ThemeMode.system);
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await init();
