@@ -8,8 +8,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-//SIMULACION CASO DE USO UTILIZANDO MOCKTAIL:
-
+// SIMULACION CASO DE USO UTILIZANDO MOCKTAIL:
 class MockFetchArticlesUseCases extends Mock implements FetchArticlesUseCases {}
 
 class MockFailure extends Failure {
@@ -58,8 +57,8 @@ void main() {
   blocTest<ArticlesBloc, ArticlesState>(
     'emits [OnLoading, OnFetchArticlesFailure] when ActionFetchArticles is added and use case returns failure',
     build: () {
-      when(() => mockFetchArticlesUseCases.call(any())).thenAnswer(
-          (_) async => const Left(MockFailure('https://example.com')));
+      when(() => mockFetchArticlesUseCases.call(any()))
+          .thenAnswer((_) async => const Left(MockFailure('error')));
       return articlesBloc;
     },
     act: (bloc) => bloc.add(ActionFetchArticles('')),
