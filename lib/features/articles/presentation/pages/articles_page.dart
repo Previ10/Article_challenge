@@ -3,6 +3,7 @@ import 'package:articles_app_challenge/features/articles/data/data_sources/artic
 import 'package:articles_app_challenge/features/articles/data/models/article_response_model.dart';
 import 'package:articles_app_challenge/features/articles/domain/entity/article_entity.dart';
 import 'package:articles_app_challenge/features/articles/presentation/manager/bloc/articles_bloc.dart';
+import 'package:articles_app_challenge/features/articles/presentation/manager/bloc/articles_state.dart';
 import 'package:articles_app_challenge/features/articles/presentation/widget/articles_list_title_widget.dart';
 import 'package:articles_app_challenge/features/articles/presentation/widget/custom_appbar_widget.dart';
 import 'package:articles_app_challenge/features/articles/presentation/widget/scroll_articles_image.dart';
