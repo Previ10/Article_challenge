@@ -25,7 +25,6 @@ final darkTheme = ThemeData(
 );
 
 class Palette {
-  // Light theme colors
   static Color backgroundColorScaffold = const Color.fromRGBO(242, 244, 247, 1);
   static Color primary = const Color(0xff0B142F);
   static Color softGrey = Colors.grey.shade300;
@@ -40,14 +39,10 @@ class Palette {
   static Color error = const Color.fromARGB(255, 181, 29, 29);
   static Color secondarySoft = const Color.fromARGB(255, 216, 137, 111);
 
-  // Dark theme colors
   static Color backgroundColorScaffoldDark =
       const Color.fromRGBO(18, 18, 18, 1);
   static Color backgroundColorDark = const Color.fromRGBO(0, 0, 0, 1);
-  static Color primaryDark =
-      const Color(0xff0A0E2F); // Darker shade for primary color
-  static Color secondaryDark =
-      const Color(0xffD4502C); // Darker shade for secondary color
-  static Color surfaceDark =
-      const Color.fromRGBO(30, 30, 30, 1); // Dark surface color
+  static Color primaryDark = const Color(0xff0A0E2F);
+  static Color secondaryDark = const Color(0xffD4502C);
+  static Color surfaceDark = const Color.fromRGBO(30, 30, 30, 1);
 }

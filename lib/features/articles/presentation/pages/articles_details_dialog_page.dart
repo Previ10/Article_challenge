@@ -53,9 +53,9 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
             Text(
               'Author: ${widget.article.author}',
               style: GoogleFonts.poppins(
-                  fontSize: screenSize.width * 0.023,
-                  fontWeight: FontWeight.w200,
-                  color: Palette.primary),
+                fontSize: screenSize.width * 0.023,
+                fontWeight: FontWeight.w200,
+              ),
             ),
             const SizedBox(height: 10),
             Text(
@@ -69,9 +69,9 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
             Text(
               widget.article.description,
               style: GoogleFonts.poppins(
-                  fontSize: screenSize.width * 0.023,
-                  fontWeight: FontWeight.w200,
-                  color: Palette.primary),
+                fontSize: screenSize.width * 0.023,
+                fontWeight: FontWeight.w200,
+              ),
             ),
             const SizedBox(height: 10),
             Row(
@@ -101,7 +101,11 @@ class _ArticleDetailPageState extends State<ArticleDetailPage> {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: const Text('Close'),
+          child: Text(
+            'Close',
+            style: GoogleFonts.poppins(
+                fontSize: screenSize.width * 0.023, color: Palette.secondary),
+          ),
         ),
       ],
     );

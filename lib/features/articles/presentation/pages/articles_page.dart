@@ -1,5 +1,4 @@
 import 'package:articles_app_challenge/core/services/dependencies_injection_service.dart';
-import 'package:articles_app_challenge/core/theme/theme.dart';
 import 'package:articles_app_challenge/features/articles/data/data_sources/articles_local_data_sources.dart';
 import 'package:articles_app_challenge/features/articles/data/models/article_response_model.dart';
 import 'package:articles_app_challenge/features/articles/domain/entity/article_entity.dart';
@@ -161,7 +160,6 @@ class _ArticlesPageState extends State<ArticlesPage> {
                         child: Text(
                           '    Recent News',
                           style: GoogleFonts.poppins(
-                              color: Palette.primary,
                               fontSize: screenSize.width * 0.03,
                               fontWeight: FontWeight.bold),
                         ),

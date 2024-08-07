@@ -1,5 +1,7 @@
+import 'package:articles_app_challenge/core/utils/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class CustomAppbar extends StatefulWidget implements PreferredSizeWidget {
   final ValueChanged<String> onCountrySelected;
@@ -44,10 +46,22 @@ class CustomAppbarState extends State<CustomAppbar> {
   @override
   Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
+    final themeNotifier = Provider.of<ThemeNotifier>(context);
+
     return AppBar(
       leading: IconButton(
-        icon: const Icon(Icons.dark_mode_outlined),
-        onPressed: () {},
+        icon: Icon(
+          themeNotifier.themeMode == ThemeMode.dark
+              ? Icons.light_mode_outlined
+              : Icons.dark_mode_outlined,
+        ),
+        onPressed: () {
+          themeNotifier.setTheme(
+            themeNotifier.themeMode == ThemeMode.dark
+                ? ThemeMode.light
+                : ThemeMode.dark,
+          );
+        },
       ),
       title: Center(
         child: Text(
