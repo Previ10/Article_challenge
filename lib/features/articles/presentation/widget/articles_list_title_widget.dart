@@ -101,6 +101,7 @@ class _ArticlesListTitleWidgetState extends State<ArticlesListTitleWidget> {
                           ),
                           const SizedBox(height: 8.0),
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Expanded(
                                 child: Text(
@@ -127,7 +128,7 @@ class _ArticlesListTitleWidgetState extends State<ArticlesListTitleWidget> {
                                   child: Row(
                                     children: [
                                       Icon(
-                                        Icons.view_agenda,
+                                        Icons.newspaper,
                                         color: Palette.pinkButton,
                                       ),
                                       const SizedBox(width: 5.0),
