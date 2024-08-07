@@ -1,4 +1,3 @@
-// app_router.dart
 import 'package:articles_app_challenge/features/articles/presentation/pages/splash_article.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
